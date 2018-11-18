@@ -1,0 +1,26 @@
+#start zookeeper
+zkserver
+#create kafka topic
+kafka-topics.bat  --create --zookeeper localhost:2181 --replication-factor 1 --partitions 2 --topic payTopic
+
+#start kafka
+cd D:\usualSW\kafka_2.11-2.0.1
+.\bin\windows\kafka-server-start.bat    .\config\server.properties
+================================================application.yml================
+server:
+  port: 8999
+  contextPath : /kafka
+spring:
+  application:
+    name: kafka
+  kafka:
+#    bootstrapServers: 192.168.0.1:9092
+    bootstrapServers: 127.0.0.1:9092
+    consumer:
+      groupId: myGroup
+      keyDeserializer: org.apache.kafka.common.serialization.StringDeserializer
+      valueDserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      groupId: myGroup
+      keyDeserializer: org.apache.kafka.common.serialization.StringSerializer
+      valueDserializer: org.apache.kafka.common.serialization.StringSerializer

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-kafka-demo
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Luotao
+Implementation-Vendor-Id: cn.example.zlt
+Build-Jdk: 1.8.0_77
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-kafka-demo
+Created-By: Maven Integration for Eclipse
+
